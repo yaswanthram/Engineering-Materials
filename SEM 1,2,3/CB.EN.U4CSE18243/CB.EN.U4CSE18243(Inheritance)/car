@@ -1,0 +1,40 @@
+package sample;
+import java.util.*;
+
+public class Car {
+	private double fuel;
+	private double efficiency;
+	public Car(double eff) {
+		fuel=0;
+		efficiency=eff/100;
+		
+	}
+	public void drive(double km)
+	{
+		fuel=fuel-(efficiency*100);
+	}
+	public double getGasInTank()
+	{
+		return fuel;
+	}
+	public void addGas(double gas)
+	{
+		fuel=gas;
+	}
+	public static void main(String args[])
+	{
+		Car c=new Car(50);
+		c.addGas(20);
+		c.drive(100);
+		double gasLeft=c.getGasInTank();
+	}
+
+
+}
+
+
+
+
+
+
+

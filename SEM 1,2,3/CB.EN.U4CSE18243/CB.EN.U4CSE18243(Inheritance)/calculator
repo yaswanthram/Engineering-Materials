@@ -1,0 +1,15 @@
+
+public class calculator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        int a,b;
+        a=10;
+        b=20;
+        System.out.println("sum: "+(a+b));
+        System.out.println("difference: "+(b-a));
+        System.out.println("quotient: "+(b/a));
+        System.out.println("product: "+(a*b));
+	}
+
+}

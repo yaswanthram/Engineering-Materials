@@ -1,0 +1,59 @@
+package classes;
+import java.util.*;
+
+public class Tax {
+	int pan_num;
+	String name;
+	int income;
+	double tax;
+	public void get()
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("enter the pan number");
+		pan_num=s.nextInt();
+		System.out.println("enter the name");
+		name=s.next();
+		System.out.println("enter income");
+		income=s.nextInt();
+	
+		
+	}
+	public void tax()
+	{
+		if (income<60000)
+		{
+			tax=0;
+		}
+		else if(income>60000&&income<150000)
+		{
+			tax=income*0.1;
+		}
+		else if(income>150000&&income<500000)
+		{
+			tax=income*0.15;
+		
+		}
+		else
+		{
+			tax=income*0.2;
+		}
+	}
+	public void display()
+	{
+		System.out.println(" the pan number is"+pan_num);
+		System.out.println("the name "+name);
+		System.out.println("income is "+income);
+		System.out.println("the tax of the income is"+tax);
+	}
+		public static void main(String args[])
+	
+		{
+			Tax t=new Tax();
+			t.get();
+			t.tax();
+			t.display();
+		}
+	}
+	
+
+

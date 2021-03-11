@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ambati"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2018-10-18 11:02:55 PM"/>
+        <attribute name="created" value="YW1iYXRpO0FNQkFUSS1QQzsyMDE4LTEwLTE4OzEwOjU3OjEzIFBNOzI1MjY="/>
+        <attribute name="edited" value="YW1iYXRpO0FNQkFUSS1QQzsyMDE4LTEwLTE4OzExOjAyOjU1IFBNOzI7MjYzMg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="j" type="Integer" array="False" size=""/>
+            <declare name="min" type="Integer" array="False" size=""/>
+            <declare name="temp" type="Integer" array="False" size=""/>
+            <declare name="k" type="Integer" array="False" size=""/>
+            <declare name="l" type="Integer" array="False" size=""/>
+            <assign variable="l" expression="0"/>
+            <assign variable="k" expression="0"/>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <output expression="&quot;enter the size of array&quot;" newline="True"/>
+            <input variable="n"/>
+            <declare name="a" type="Integer" array="True" size="n"/>
+            <while expression="k&lt;n">
+                <output expression="&quot;enter the elements into the array&quot;" newline="True"/>
+                <input variable="a[k]"/>
+                <assign variable="k" expression="k+1"/>
+            </while>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <assign variable="min" expression="i"/>
+                <for variable="j" start="i+1" end="n-1" direction="inc" step="1">
+                    <if expression="a[min]&gt;a[j]">
+                        <then>
+                            <assign variable="min" expression="j"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <assign variable="temp" expression="a[i]"/>
+                    <assign variable="a[i]" expression="a[min]"/>
+                    <assign variable="a[min]" expression="temp"/>
+                </for>
+            </for>
+            <while expression="l&lt;n">
+                <output expression="a[l]" newline="True"/>
+                <assign variable="l" expression="l+1"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

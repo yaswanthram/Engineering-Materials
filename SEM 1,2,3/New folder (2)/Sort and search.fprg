@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.6">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Yaswanth Ram"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2018-10-23 12:13:16 AM"/>
+        <attribute name="created" value="WWFzd2FudGggUmFtOyBZQVNXQU5USFJBTTsgMjAxOC0xMC0yMjsgMDk6NTQ6NTYgUE07IDMzOTk="/>
+        <attribute name="edited" value="WWFzd2FudGggUmFtOyBZQVNXQU5USFJBTTsgMjAxOC0xMC0yMzsgMTI6MTM6MTYgQU07IDMzNzA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the number of elements you want in the array :-&quot;"/>
+            <input variable="n"/>
+            <declare name="Num" type="Integer" array="True" size="n"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the elements :-&quot;"/>
+            <declare name="Min" type="Integer" array="False" size=""/>
+            <declare name="temp" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <input variable="Num[i]"/>
+            </for>
+            <declare name="x" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="n-2" direction="inc" step="1">
+                <for variable="x" start="i" end="n-1" direction="inc" step="1">
+                    <if expression="Num[i] &gt; Num[x]">
+                        <then>
+                            <assign variable="temp" expression="Num[x]"/>
+                            <assign variable="Num[x]" expression="Num[i]"/>
+                            <assign variable="Num[i]" expression="temp"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+            </for>
+            <declare name="Search" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the element you want to search for :-&quot;"/>
+            <input variable="Search"/>
+            <declare name="u" type="Integer" array="False" size=""/>
+            <declare name="l" type="Integer" array="False" size=""/>
+            <declare name="m" type="Integer" array="False" size=""/>
+            <assign variable="u" expression="0"/>
+            <assign variable="l" expression="n-1"/>
+            <assign variable="m" expression="abs((u+l)/2)"/>
+            <while expression="Search != Num[m] &amp;&amp; Search != Num[l] &amp;&amp; Search != Num[u]">
+                <if expression="Num[m] &gt; Search">
+                    <then>
+                        <assign variable="l" expression="m"/>
+                        <assign variable="m" expression="abs((l+u)/2)"/>
+                    </then>
+                    <else>
+                        <assign variable="u" expression="m"/>
+                        <assign variable="m" expression="abs((l+u)/2)"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="Num[m] = Search">
+                <then>
+                    <output expression="&quot;The element &quot;&amp; Search &amp;&quot; is in the &quot;&amp; m + 1 &amp;&quot; position in the array&quot;"/>
+                </then>
+                <else>
+                    <if expression="Num[u] = Search">
+                        <then>
+                            <output expression="&quot;The element &quot;&amp; u &amp;&quot; is in the &quot;&amp; u + 1 &amp;&quot; position in the array&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="Num[l] = Search">
+                                <then>
+                                    <output expression="&quot;The element &quot;&amp; l &amp;&quot; is in the &quot;&amp; l + 1 &amp;&quot; position in the array&quot;"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;The element that you are searching is not in the array.&quot;"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,50 @@
+package classes;
+import java.util.*;
+public class Distance {
+	int f;
+	float i;
+	public  Distance(int x,float y)
+	{
+		f=x;
+		i=y;
+	}
+	public Distance()
+	{
+	}
+	
+	public void get()
+	{
+		Scanner s=new Scanner(System.in);
+		f=s.nextInt();
+		i=s.nextFloat();
+						
+	}
+	public void display()
+	{
+		System.out.println("distance in feet="+f);
+		System.out.println("inches="+i);
+		
+	}
+	public  void add(Distance a,Distance  b)
+	{
+	f=a.f+b.f;
+	i=a.i+b.i;
+		
+	}
+	public static void main(String args[])
+	{
+	Distance d1=new Distance();
+	Distance d2=new Distance();
+	Distance d3=new Distance();
+	d1.get();
+	d1.display();
+	d2.get();
+	d2.display();
+	d3.add(d1,d2);
+	d3.display();
+	
+	
+	}
+	
+
+}

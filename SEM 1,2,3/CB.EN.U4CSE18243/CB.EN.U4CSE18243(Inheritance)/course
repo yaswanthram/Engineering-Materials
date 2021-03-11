@@ -1,0 +1,67 @@
+package sample;
+import java.util.Scanner;
+public class course
+{
+	public String courseName;
+	Faculty instructor;
+	int maxStrength;
+	Scanner s=new Scanner(System.in);
+	public course(String courseName,Faculty instructor)
+	{
+		this.courseName=courseName;
+		this.maxStrength=0;
+		this.instructor=instructor;
+		
+	}
+	public String getcourseName()
+	{
+		return this.courseName;
+	}
+	public void setcourseName()
+	{
+		this.courseName="Application of"+this.courseName;
+	}
+	public void setStrength()
+	{
+		System.out.println("enter the strength of students");
+		this.maxStrength=s.nextInt();
+		
+		
+	}
+	public int getStrength()
+	{
+		return maxStrength;
+		
+	}
+	public void tostring()
+	{
+		System.out.println(getcourseName()+"has students"+getStrength()+"and is instructed by"+instructor.getName());
+	}
+	
+		public static void main(String args[])
+		{
+			Scanner s=new Scanner(System.in);
+			System.out.println("enter the course name");
+			String courseName=s.next();
+			Faculty f=new Faculty("viany");
+			course c=new course(courseName,f);
+			c.setcourseName();
+			c.setStrength();
+			c.tostring();
+			
+	}
+	
+	
+}
+class Faculty
+{
+	private String name;
+	public Faculty(String name)
+	{
+		this.name=name;
+	}
+	public String getName()
+	{
+		return name;
+	}
+}

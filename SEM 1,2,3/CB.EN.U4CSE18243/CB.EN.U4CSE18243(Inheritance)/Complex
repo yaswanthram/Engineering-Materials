@@ -1,0 +1,72 @@
+package classes;
+import java.util.*;
+
+
+public class Complex {
+	int real;
+	int imag;
+	public Complex(int x,int y)
+	{
+		real=x;
+		imag=y;
+		
+	}
+	public Complex()
+	{
+	}
+	public void get()
+	{
+		Scanner s=new Scanner(System.in);
+		
+		real=s.nextInt();
+		imag=s.nextInt();
+		
+	}
+	public void add(Complex a,Complex b)
+	{
+		real=a.real+b.real;
+		imag=a.imag+b.imag;
+				
+	
+	}
+	public void sub(Complex a,Complex b)
+	{
+		real=a.real-b.real;
+		imag=a.imag-b.imag;
+	}
+	public void  display()
+	{
+		System.out.println("the sum of real numbers is="+real);
+		System.out.println("the sum of imaginary is="+imag);
+		
+	}
+	public void display2()
+	{
+		System.out.println("the subtraction of two real numbers is="+real);
+		System.out.println("the subtraction of imaginary is="+imag);
+	}
+	public void print()
+	{
+		System.out.println("the complex numbers are="+real+imag);
+	}
+	public static void main(String args[])
+	{
+		Complex c1=new Complex();
+		Complex c2=new Complex();
+		Complex c3=new Complex();
+		Complex c4=new Complex();
+		c1.get();
+		c2.get();
+		c3.add(c1, c2);
+		c3.display();
+		c4.sub(c1, c2);
+		c4.display2();
+		c3.print();
+		c4.print();
+				
+		
+	}
+	
+	}
+
+

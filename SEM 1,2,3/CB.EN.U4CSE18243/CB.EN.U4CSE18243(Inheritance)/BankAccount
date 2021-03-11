@@ -1,0 +1,72 @@
+package classes;
+import java.util.*;
+
+public class BankAccount {
+	String name;
+	int account_num;
+	String account_type;
+	int balance;
+	int deposite;
+	int withdraw;
+	public BankAccount()
+	{
+	}
+	public BankAccount(String s,int n,String t,int b)
+	{
+		name=s;
+		account_num=n;
+		account_type=t;
+		balance=b;
+		
+	}
+	public void read()
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("enter the name");
+		name=s.next();
+		System.out.println("enter the account number");
+		account_num=s.nextInt();
+		System.out.println("enter the account type");
+		account_type=s.next();
+		System.out.println("enter the current balance");
+		balance=s.nextInt();
+		System.out.println("enter the deposited money");
+		deposite=s.nextInt();
+		System.out.println("enter the withdraw money");
+		withdraw=s.nextInt();
+		
+	}
+	public void deposite_tot(BankAccount a)
+	{
+		
+	balance=a.balance+a.deposite;
+	
+	
+	}
+	public void  withdraw_tot(BankAccount b)
+	{
+	balance=b.balance-b.withdraw;
+	
+	}
+	public void display()
+	{
+		System.out.println("name:"+name);
+		System.out.println("account number:"+account_num);
+		System.out.println("account type:"+account_type);
+		System.out.println("balnace is:"+balance);
+	}
+	public static void main(String args[])
+	{
+		BankAccount b=new BankAccount();
+		b.read();
+		b.display();
+		b.deposite_tot(b);
+		System.out.println("after depositing money:");
+		b.display();
+		b.withdraw_tot(b);
+		System.out.println("after withdraw of money:");
+		b.display();
+		
+	}
+
+}

@@ -1,0 +1,8 @@
+package classes;
+
+public class Ticket {
+	int people;
+	float money;
+	public Ticket()
+
+}

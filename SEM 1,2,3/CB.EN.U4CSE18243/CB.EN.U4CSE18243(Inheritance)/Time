@@ -1,0 +1,59 @@
+package classes;
+
+import java.util.Scanner;
+
+public class Time {
+	int hour;
+	int min;
+	int sec;
+	public Time()
+	{
+	}
+	public Time(int h,int m,int s)
+	{
+		hour=h;
+		min=m;
+		sec=s;
+		
+	}
+	public void get()
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("enter the hours");
+		hour=s.nextInt();
+		System.out.println("enter the min");
+		min=s.nextInt();
+		System.out.println("enter the sec");
+		sec=s.nextInt();
+		
+		
+		
+	}
+	public void add(Time a,Time b)
+	{
+		hour=a.hour+b.hour;
+		min=a.min+b.min;
+		sec=a.sec+b.sec;
+	}
+	public void display()
+	{
+		System.out.println(hour+":"+min+":"+sec);
+		
+	}
+	public static void main(String args[])
+	{
+		Time t1=new Time();
+		Time t2=new Time();
+		Time t3=new Time();
+		t1.get();
+		t1.display();
+		t2.get();
+		t2.display();
+		t3.add(t1,t2);
+		t3.display();
+		
+		
+				
+	}
+
+}

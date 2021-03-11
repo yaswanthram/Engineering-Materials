@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.6">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="V REVANTH REDDY"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2018-10-23 04:48:19 PM"/>
+        <attribute name="created" value="ViBSRVZBTlRIIFJFRERZO0xBUFRPUC02Nk9FUzRPTzsyMDE4LTEwLTIyOzA1OjQxOjE0IFBNOzMzOTU="/>
+        <attribute name="edited" value="WWFzd2FudGggUmFtOyBZQVNXQU5USFJBTTsgMjAxOC0xMC0yMzsgMDQ6NDg6MTkgUE07IDMzOTc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="low, high" type="Integer" array="False" size=""/>
+            <declare name="mid" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <declare name="search" type="Integer" array="False" size=""/>
+            <output expression="&quot;enter the size of array&quot;"/>
+            <input variable="n"/>
+            <assign variable="low" expression="0"/>
+            <assign variable="high" expression="n"/>
+            <assign variable="mid" expression="(low+high)/2"/>
+            <declare name="a" type="Integer" array="True" size="n"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="&quot;enter the elements into the array&quot;"/>
+                <input variable="a[i]"/>
+            </for>
+            <output expression="&quot;enter the element to be searched&quot;"/>
+            <input variable="search"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <while expression="a[mid] != search &amp;&amp; i &lt; n">
+                <if expression="a[mid]&lt;search">
+                    <then>
+                        <assign variable="low" expression="mid+1"/>
+                        <assign variable="mid" expression="(low+high)/2"/>
+                    </then>
+                    <else>
+                        <assign variable="high" expression="mid-1"/>
+                        <assign variable="mid" expression="(low+high)/2"/>
+                    </else>
+                </if>
+                <assign variable="i" expression="i + 1"/>
+            </while>
+            <if expression="a[mid] = search">
+                <then>
+                    <output expression="&quot;The number that you are searching is present&quot;"/>
+                </then>
+                <else>
+                    <output expression="&quot;The number that you are searching is not present&quot;"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
